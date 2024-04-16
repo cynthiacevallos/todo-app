@@ -19,11 +19,16 @@ function App() {
     }])
   }
 
-  return (
-    <> 
-      <TaskForm createTask={createTask} />
-      <TaskList tasks={tasks}/>
+  function deleteTask(taskId){
+    // alert(taskId)
+    // console.log(taskId)
+     setTasks(tasks.filter((e)=>e.id != taskId))
+  }
 
+  return (
+    <>
+      <TaskForm createTask={createTask} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
     </>
   )
 }

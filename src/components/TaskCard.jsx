@@ -1,10 +1,21 @@
+// import { TaskContextProvider } from "../context/TaskContext"
+function TaskCard({ task, deleteTask }) {
+    function mostrarAlerta() {
+        // alert(task.id)
+        deleteTask(task.id)
+    }
 
-function TaskCard({task}) {
     return (
-        <div>
-            <h2>{task.title}</h2>
-            <p>{task.descripcion}</p>
-        </div>
+        // <TaskContextProvider>
+            <div>
+                <h2>{task.title}</h2>
+                <p>{task.descripcion}</p>
+                <button onClick={mostrarAlerta}>Eliminar tarea</button>
+            </div>
+        // </TaskContextProvider>
+
+
+
     )
 }
 
